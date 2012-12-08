@@ -4,25 +4,26 @@
 <head>
    <meta charset="utf-8" />
    <title>Dynamic List</title>
-   <script src="js/jquery-1.8.0.js"></script>
+   <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
    <script>
       // binding nested functions
       $(document).ready(function() {
-    	  // bind click function to add show
+    	  // bind click function to addShow
     	  $('#addShow').click(function() {
-    		//get user input
-        	 var new Show = $('#getInput').val();
-      	  	// append
-      	  	$('#theList').append('<li>'+newShow+'</li>');
-    	  }); // end bind to event listener
+    	     //get user input
+        	 var newShow = $('#getInput').val();
+    		 
+      	  	 // append to list
+      	  	 $('#theList').append('<li>' + newShow + '</li>');
+    	  });
     	  		
     	  // bind click function to color list
     	  $('#setColors').click(function() {
     		// color odd & even rows
     		$('ol > li:nth-child(odd)').css('background-color', $('#color1').val());
     		$('ol > li:nth-child(even)').css('background-color', $('#color2').val());
-    	  });	
-      }
+    	  });
+      });
    </script>
 </head>
 
@@ -47,9 +48,10 @@
       <form>
          <label for="getInput">Title:</label>
          <input type="text" id="getInput" />	
-         <button type="button" value="Add" id="addShow;"/>Add</button><br />
+         <button type="button" value="Add" id="addShow">Add</button>
+         <br />
          
-         <button type="reset" value="Reset" />Reset</button>
+         <button type="reset" value="Reset" >Reset</button>
       </form>
    </fieldset>
 

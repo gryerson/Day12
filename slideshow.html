@@ -7,30 +7,31 @@
    <link rel="shortcut icon" href="images/homer.ico" />
    <link rel="stylesheet" href="css/main.css" />
    <link rel="stylesheet" href="css/nav.css" />
-   <script src="js/jquery-1.8.0.js"></script>
-   <script>
-   $(document).ready(function() {
-	   // Hide all
-	   $('.slideShow img:gt(0)').hide();
-	   
-	   // Set timee
-	   setInterval(function() {
-		   $('.slideShow:first-child').fadeOut().next('img').fadeIn().end().appendTo('.slideShow'), 3000);
-   	   }
-   }
-   </script>
    <style>
       .slideShow {
          position: relative;
          width: 407px;
          height: 500px;
       }
+      
       .slideShow img {
          position: absolute;
          left: 0;
          top: 0;
       }
    </style>
+   <script src="js/jquery-1.8.0.js"></script>
+   <script src="js/jquery-ui-1.9.2.js"></script>
+   <script>
+      $(document).ready(function() {
+	      // Hide all
+	      $('.slideShow img:gt(0)').hide();
+	   
+	      // Set time
+	      setInterval(function() { 
+	    	  $('.slideShow: first-child').fadeOut().next('img').fadeIn().end().appendTo('.slideShow')}, 3000);    
+      });
+   </script>
 </head>
 
 <body>
@@ -92,22 +93,13 @@
       </header>
 
       <!-- Content Starts Here -->            
-
-<h2>Behind the Music Slide Show with jQuery</h2>
-
-    
-
-<div class="slideShow">
-
-<img src="images/abbey_road.jpg" alt="The Beatles" width="407" height="500" />
-
-<img src="images/born_in_the_usa.jpg" alt="Bruce Springsteen" width="407" height="500" />
-
-<img src="images/nevermind.jpg" alt="Nirvana" width="407" height="500" />
-
-</div>
-
-<!-- Content Ends Here -->
+      <h2>Behind the Music Slide Show with jQuery</h2>
+      <div class="slideShow">
+         <img src="images/abbey_road.jpg" alt="The Beatles" width="407" height="500" />
+         <img src="images/born_in_the_usa.jpg" alt="Bruce Springsteen" width="407" height="500" />
+         <img src="images/nevermind.jpg" alt="Nirvana" width="407" height="500" />
+      </div>
+      <!-- Content Ends Here -->
 
    </section>
 

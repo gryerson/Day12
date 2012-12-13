@@ -2,33 +2,34 @@
 
 <html lang="en">
 <head>
-   <meta charset="utf-8" />
-   <title>Homer’s Online Music Shop</title>
-   <link rel="shortcut icon" href="images/homer.ico" />
-   <link rel="stylesheet" href="css/main.css" />
-   <link rel="stylesheet" href="css/nav.css" />
-   <style>
-      .slideShow {
-         position: relative;
-         width: 407px;
-         height: 500px;
-      }
-      
-      .slideShow img {
-         position: absolute;
-         left: 0;
-         top: 0;
-      }
-   </style>
-   <script src="js/jquery-1.8.0.js"></script>
-   <script>
+    <meta charset="utf-8" />
+    <title>Homer’s Online Music Shop</title>
+    <link rel="shortcut icon" href="images/homer.ico" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/jquery-ui-1.9.2.css" />
+    <style>
+       .openIcon {
+          background-image: url(images/open.png);
+       }
 
-       $(document).ready(function(){
-           $('.slideShow img:gt(0)').hide();
+       .closeIcon {
+          background-image: url(images/close.png);
+       }
+    </style>
+	<script src="js/jquery-1.8.0.js"></script>
+	<script src="js/jquery-ui-1.9.2.js"></script>
+    <script>
+       // Create function binding to accordion UI effect
+       $(document).ready( function() {
 
-           setInterval(function(){$('.slideShow :first-child').fadeOut().next('img').fadeIn().end().appendTo('.slideShow');}, 3000);
-       });
-   </script>
+          // Call accordion method
+          $("#accordion").accordion( { collapsible: true, autoHeight: true, active: false });	
+
+          // Set icon images
+          $("#accordion").accordion("option", "icons", { 'header': 'openIcon', 'headerSelected': 'closeIcon' });	
+       }); // end page load
+</script>
 </head>
 
 <body>
@@ -89,14 +90,32 @@
          <h1>Everything Is On Sale for Halloween</h1>
       </header>
 
-      <!-- Content Starts Here -->            
-      <h2>Behind the Music Slide Show with jQuery</h2>
-      <div class="slideShow">
-         <img src="images/abbey_road.jpg" alt="The Beatles" width="407" height="500" />
-         <img src="images/born_in_the_usa.jpg" alt="Bruce Springsteen" width="407" height="500" />
-         <img src="images/nevermind.jpg" alt="Nirvana" width="407" height="500" />
-      </div>
-      <!-- Content Ends Here -->
+      <!-- Content Starts Here -->
+      <h2>FAQs with JQuery</h2>
+
+      <article class="content">
+          <div class="start" id="accordion">
+              <h3>Lorem gravida mi ultrices wisi adipiscing justo lacus eget deserunt?</h3>
+
+              <div class="answer">
+                  <p>Lorem ipsum dolor sit amet bibendum. Eros ante scelerisque. Fermentum nam quisque mauris non quis!</p>
+              </div>
+
+              <h3>Ut vivamus sociis sapien vivamus at sagittis orci eget lacus?</h3>
+
+              <div class="answer">
+                  <p>Lorem ipsum dolor sit amet vitae. Risus congue non. Quam dolor et. Ridiculus est a. Sit arcu adipiscing velit sed magna eget non tellus mauris.</p>
+              </div>
+
+              <h3>Turpis vel aliquet gravida turpis in nunc libero sagittis maecenas tincidunt dolor?</h3>
+
+              <div class="answer">
+                  <p>Lorem ipsum dolor. Sit amet ultricies. Dis ligula risus eget tortor ante. Purus at pharetra et lobortis suspendisse. Tempor quisque porta ornare in nibh vitae aperiam sed nunc vitae cursus!</p>
+              </div>
+          </div>
+      </article>
+   <!-- Content Ends Here -->
+
 
    </section>
 
